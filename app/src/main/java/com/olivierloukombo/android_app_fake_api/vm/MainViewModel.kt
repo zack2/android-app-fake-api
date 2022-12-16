@@ -13,7 +13,7 @@ class MainViewModel : ViewModel() {
 
     var commentListResponse: List<Comment> by mutableStateOf(listOf())
     var error: String by mutableStateOf("")
-    fun getComments(){
+    fun getComments(): List<Comment>{
         viewModelScope.launch {
             val api = ApiService.getInstance()
             try {
@@ -23,6 +23,6 @@ class MainViewModel : ViewModel() {
                 error = e.message.toString()
             }
         }
-
+        return commentListResponse;
     }
 }
