@@ -1,7 +1,6 @@
 package com.olivierloukombo.android_app_fake_api
 
 import android.annotation.SuppressLint
-import android.content.res.Resources.Theme
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
@@ -9,7 +8,6 @@ import androidx.activity.viewModels
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
-import androidx.compose.foundation.lazy.itemsIndexed
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.*
 import androidx.compose.runtime.*
@@ -77,12 +75,7 @@ fun CommentList(comments: List<Comment>) {
                 comment.id
             }
         ) { comment ->
-            val item = comment
-            if (item == null) {
-                CircularProgressIndicator()
-            } else {
-                CommentItem(item)
-            }
+            CommentItem(comment)
 
         }
 
