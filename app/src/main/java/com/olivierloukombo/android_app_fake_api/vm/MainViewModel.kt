@@ -5,8 +5,8 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.setValue
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.olivierloukombo.android_app_fake_api.ApiService
-import com.olivierloukombo.android_app_fake_api.Comment
+import com.olivierloukombo.android_app_fake_api.network.ApiService
+import com.olivierloukombo.android_app_fake_api.model.Comment
 import kotlinx.coroutines.launch
 
 class MainViewModel : ViewModel() {
