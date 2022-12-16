@@ -7,9 +7,12 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.olivierloukombo.android_app_fake_api.network.ApiService
 import com.olivierloukombo.android_app_fake_api.model.Comment
+import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
+import javax.inject.Inject
 
-class MainViewModel : ViewModel() {
+@HiltViewModel
+class MainViewModel @Inject constructor() : ViewModel() {
 
     var commentListResponse: List<Comment> by mutableStateOf(listOf())
     var error: String by mutableStateOf("")
