@@ -13,16 +13,19 @@ import androidx.compose.material.*
 import androidx.compose.runtime.*
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.Color.Companion.White
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextDecoration
 import androidx.compose.ui.text.style.TextOverflow
+import androidx.compose.ui.text.toUpperCase
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.olivierloukombo.android_app_fake_api.model.Comment
 import com.olivierloukombo.android_app_fake_api.ui.theme.AndroidappfakeapiTheme
 import com.olivierloukombo.android_app_fake_api.vm.MainViewModel
 import dagger.hilt.android.AndroidEntryPoint
+import java.util.*
 
 @AndroidEntryPoint
 class MainActivity : ComponentActivity() {
@@ -55,8 +58,11 @@ fun Toolbar(){
         elevation = 0.dp,
         title = {
             Text(
-                text = stringResource(R.string.app_name),
-                color = Color.White
+                text = stringResource(R.string.app_name)
+                    /*.uppercase(Locale.ROOT)*/,
+                color = White,
+                style = MaterialTheme.typography.h1,
+
             )
         }
     )
@@ -88,7 +94,7 @@ fun CommentItem(commentMe: Comment) {
         modifier = Modifier
             .padding(8.dp, 4.dp)
             .fillMaxWidth()
-            .height(110.dp), shape = RoundedCornerShape(0.dp), elevation = 4.dp
+            .height(140.dp), shape = RoundedCornerShape(0.dp), elevation = 4.dp
     ) {
         Surface() {
 
@@ -108,13 +114,15 @@ fun CommentItem(commentMe: Comment) {
                 ) {
                     Text(
                         text = commentMe.name,
-                        style = MaterialTheme.typography.subtitle1,
-                        fontWeight = FontWeight.Bold
+                        style = MaterialTheme.typography.h1,
+                        maxLines = 1,
+                        overflow = TextOverflow.Clip
+
                     )
                     Text(
                         text = commentMe.email,
                         style = MaterialTheme.typography.caption,
-                        color = Color.Blue,
+                        color = MaterialTheme.colors.primaryVariant,
                         textDecoration = TextDecoration.Underline,
                         modifier = Modifier
                             .padding(4.dp)
@@ -123,8 +131,8 @@ fun CommentItem(commentMe: Comment) {
 
                     Text(
                         text = commentMe.body,
-                        style = MaterialTheme.typography.body1,
-                        maxLines = 2,
+                        style = MaterialTheme.typography.h2,
+                        maxLines = 3,
                         overflow = TextOverflow.Ellipsis
                     )
 
