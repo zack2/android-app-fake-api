@@ -9,14 +9,16 @@ The list item has to display such data:
 - email
 - body
 
-Create main screen with list of comments from this request [https://api.github.com/users](https://jsonplaceholder.typicode.com/comments)
+Tech stack:
 
-The list item has to display such data:
-
-- name
-- email
-- body
-
+- Jetpack Compose
+- Kotlin
+- MVVM Architecture
+- Kotlin coroutines
+- Retrofit
+- Dagger 2 or Dagger Hilt
+- Single Activity Design Pattern
+- Clean Architecture
 ## Project Structure
 
 
@@ -32,5 +34,4 @@ Dillinger uses a number of open source projects to work properly:
 - ```vm``` the viewmodel
 
 ## Release
-
-You can find the apk  [here]()
+You can find the apk  [here](https://jsonplaceholder.typicode.com/comments)
