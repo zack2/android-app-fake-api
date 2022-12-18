@@ -26,9 +26,6 @@ class MainActivity : ComponentActivity() {
     @SuppressLint("UnusedMaterialScaffoldPaddingParameter")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-      /*  installSplashScreen().setKeepOnScreenCondition {
-            !splashViewModel.isLoading.value
-        }*/
         setContent {
             AndroidappfakeapiTheme {
                 val navController = rememberNavController()

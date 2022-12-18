@@ -4,6 +4,7 @@ import android.view.animation.OvershootInterpolator
 import androidx.compose.animation.core.tween
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.*
+import androidx.compose.material.MaterialTheme
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.remember
@@ -60,7 +61,7 @@ fun SplashScreen(navController: NavHostController) = Box(
     Text(
         text = "Version - ${BuildConfig.VERSION_NAME}",
         textAlign = TextAlign.Center,
-        fontSize = 24.sp,
+        style = MaterialTheme.typography.h2,
         modifier = Modifier.align(Alignment.BottomCenter).padding(16.dp)
     )
 }

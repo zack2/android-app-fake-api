@@ -10,6 +10,7 @@ import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.*
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.style.TextDecoration
@@ -39,10 +40,23 @@ class Home @Inject constructor(var viewModel : MainViewModel?) {
             ) {
 
                 val invokedComments = viewModel!!.getComments()
+                if(invokedComments.isEmpty())
+                    CircularProgress()
                 CommentList(invokedComments)
             }
 
 
+        }
+    }
+
+    @Composable
+    private fun CircularProgress(){
+        Column(
+            modifier = Modifier.fillMaxSize(),
+            verticalArrangement = Arrangement.Center,
+            horizontalAlignment = Alignment.CenterHorizontally
+        ) {
+            CircularProgressIndicator()
         }
     }
 
@@ -77,7 +91,6 @@ class Home @Inject constructor(var viewModel : MainViewModel?) {
                 }
             ) { comment ->
                 CommentItem(comment)
-
             }
 
         }
