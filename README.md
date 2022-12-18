@@ -34,4 +34,4 @@ Dillinger uses a number of open source projects to work properly:
 - ```vm``` the viewmodel
 
 ## Release
-You can find the apk  [here](https://jsonplaceholder.typicode.com/comments)
+You can find the apk  [here](https://github.com/zack2/android-app-fake-api/tree/main/app/release)
