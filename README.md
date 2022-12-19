@@ -21,9 +21,6 @@ Tech stack:
 - Clean Architecture
 ## Project Structure
 
-
-Dillinger uses a number of open source projects to work properly:
-
 - ```di``` Contain all module for Dependency Injection
 - ```model```  Contain pojo
 - ```navigation```  Contain NavGraph and Screen .
